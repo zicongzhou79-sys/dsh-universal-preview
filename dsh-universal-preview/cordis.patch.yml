@@ -1,0 +1,4 @@
+- insert:
+    - id: universal-preview
+      name: '@local/dsh-universal-preview'
+      config: {}
