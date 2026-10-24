@@ -53,3 +53,25 @@ keyed bodies in `sidebar.right.tab.document`.
 Installed in the current profile; the two bodies appear as live occupants of
 `sidebar.right.tab.document` beside the eight builtin ones. Rendered pixels were
 not verified because this Agent has no browser control in this session.
+
+## Repository and packaging
+
+Source: <https://github.com/zicongzhou79-sys/dsh-universal-preview>
+
+Build the distributable tarball and install it locally:
+
+```bash
+npm pack                                            # -> local-dsh-universal-preview-0.1.0.tgz
+npm install ./local-dsh-universal-preview-0.1.0.tgz # install from the tarball
+```
+
+The `files` field in `package.json` keeps the tarball minimal: `index.js`,
+`client.js`, `cordis.patch.yml`, `locale/*.json`, `icon.svg`, plus the always
+included `README.md` and `package.json`. The built `.tgz` is committed beside
+the sources as a release artifact, so every tag ships with a ready-to-install
+package.
+
+Publishing to the public npm registry would additionally require renaming the
+`@local` scope to an owned one (e.g. `@zhouchunxiao/...`) and setting
+`"private": false`; this repository currently distributes the package as a
+tarball and through the DSH bundle patch mechanism only.
