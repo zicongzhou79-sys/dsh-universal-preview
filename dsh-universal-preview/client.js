@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: '@local/dsh-universal-preview',
+  id: '@zhouchunxiao/dsh-universal-preview',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -181,8 +181,8 @@ window.__ModuleLoader__.load({
       );
     }
 
-    const VIDEO_ID = '@local/dsh-universal-preview/video';
-    const LATEX_ID = '@local/dsh-universal-preview/latex';
+    const VIDEO_ID = '@zhouchunxiao/dsh-universal-preview/video';
+    const LATEX_ID = '@zhouchunxiao/dsh-universal-preview/latex';
 
     const CSS = '.universalPreview-status{box-sizing:border-box;width:100%;min-height:160px;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center;color:var(--dsw-alias-label-secondary);font-family:var(--dsw-font,sans-serif);font-size:13px;line-height:1.5;white-space:normal}.universalPreview-video{box-sizing:border-box;width:100%;height:100%;min-height:160px;display:flex;align-items:center;justify-content:center;padding:12px}.universalPreview-video-el{max-width:100%;max-height:100%;width:auto;height:auto;outline:none;border-radius:var(--dsw-radius-md,8px);background:#000}.universalPreview-latex{box-sizing:border-box;width:100%;height:100%;min-height:160px;padding:12px}.universalPreview-latex-frame{width:100%;height:100%;border:0;background:transparent;border-radius:var(--dsw-radius-md,8px)}';
 
@@ -196,7 +196,7 @@ window.__ModuleLoader__.load({
           const existing = document.querySelector('style[data-plugin-css="universal-preview"]');
           if (existing !== null) return undefined;
           const tag = document.createElement('style');
-          tag.dataset.plugin = '@local/dsh-universal-preview';
+          tag.dataset.plugin = '@zhouchunxiao/dsh-universal-preview';
           tag.dataset.pluginCss = 'universal-preview';
           tag.textContent = CSS;
           document.head.appendChild(tag);

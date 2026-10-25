@@ -1,4 +1,4 @@
-# @local/dsh-universal-preview
+# @zhouchunxiao/dsh-universal-preview
 
 Right-Sidebar preview renderers that the shipped document preview does not provide:
 video files and LaTeX sources. It registers nothing that already exists and
@@ -13,8 +13,8 @@ renderers, so this bundle adds only:
 
 | Suffix | Renderer id | Loading | Notes |
 |---|---|---|---|
-| `.mp4`, `.m4v`, `.webm`, `.ogv` | `@local/dsh-universal-preview/video` | `bytes-complete` | Native `<video>` over a Blob URL. |
-| `.tex`, `.latex`, `.ltx`, `.sty`, `.cls` | `@local/dsh-universal-preview/latex` | `text-pages` | KaTeX inside a sandboxed iframe. |
+| `.mp4`, `.m4v`, `.webm`, `.ogv` | `@zhouchunxiao/dsh-universal-preview/video` | `bytes-complete` | Native `<video>` over a Blob URL. |
+| `.tex`, `.latex`, `.ltx`, `.sty`, `.cls` | `@zhouchunxiao/dsh-universal-preview/latex` | `text-pages` | KaTeX inside a sandboxed iframe. |
 
 Both are registered at the `extension` band, so they win over the plain-text
 fallback for their own suffixes while every builtin renderer keeps its own
@@ -61,8 +61,8 @@ Source: <https://github.com/zicongzhou79-sys/dsh-universal-preview>
 Build the distributable tarball and install it locally:
 
 ```bash
-npm pack                                            # -> local-dsh-universal-preview-0.1.0.tgz
-npm install ./local-dsh-universal-preview-0.1.0.tgz # install from the tarball
+npm pack                                        # -> zicongzhou79-dsh-universal-preview-0.1.0.tgz
+npm install @zhouchunxiao/dsh-universal-preview # install from the npm registry
 ```
 
 The `files` field in `package.json` keeps the tarball minimal: `index.js`,
@@ -71,7 +71,4 @@ included `README.md` and `package.json`. The built `.tgz` is committed beside
 the sources as a release artifact, so every tag ships with a ready-to-install
 package.
 
-Publishing to the public npm registry would additionally require renaming the
-`@local` scope to an owned one (e.g. `@zhouchunxiao/...`) and setting
-`"private": false`; this repository currently distributes the package as a
-tarball and through the DSH bundle patch mechanism only.
+Published on the public npm registry as `@zhouchunxiao/dsh-universal-preview`.
