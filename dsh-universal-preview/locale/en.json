@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "Universal File Preview",
-    "description": "Adds video and LaTeX renderers to the right Sidebar document preview without replacing existing renderers."
+    "description": "Adds video, audio, LaTeX, and JSON/YAML structure renderers to the right Sidebar document preview without replacing existing renderers."
   }
 }

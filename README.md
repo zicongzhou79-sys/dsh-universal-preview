@@ -3,8 +3,8 @@
 侧边栏预览多种文件格式
 
 `@zhouchunxiao/dsh-universal-preview` adds Right-Sidebar preview renderers that the shipped
-DSH document preview does not provide: video files and LaTeX sources. It registers
-nothing that already exists and replaces no builtin renderer.
+DSH document preview does not provide: video, audio, LaTeX sources, and JSON/YAML
+structure views. It registers nothing that already exists and replaces no builtin renderer.
 
 All package sources live under [`dsh-universal-preview/`](./dsh-universal-preview/).
 
@@ -18,11 +18,14 @@ renderers, so this bundle adds only:
 | Suffix | Renderer id | Loading | Notes |
 |---|---|---|---|
 | `.mp4`, `.m4v`, `.webm`, `.ogv` | `@zhouchunxiao/dsh-universal-preview/video` | `bytes-complete` | Native `<video>` over a Blob URL. |
+| `.mp3`, `.wav`, `.flac`, `.m4a`, `.aac`, `.opus`, `.oga`, `.ogg` | `@zhouchunxiao/dsh-universal-preview/audio` | `bytes-complete` | Native `<audio>` over a Blob URL. |
 | `.tex`, `.latex`, `.ltx`, `.sty`, `.cls` | `@zhouchunxiao/dsh-universal-preview/latex` | `text-pages` | KaTeX inside a sandboxed iframe. |
+| `.json` | `@zhouchunxiao/dsh-universal-preview/json` | `text-pages` | Collapsible tree plus located parse errors. |
+| `.yaml`, `.yml` | `@zhouchunxiao/dsh-universal-preview/yaml` | `text-pages` | Same tree and error reporting for a YAML subset. |
 
-Both are registered at the `extension` band, so they win over the plain-text
-fallback for their own suffixes while every builtin renderer keeps its own
-extensions. The builtin plain-text and code previews stay available as
+All of them are registered at the `extension` band, so they win over the
+plain-text fallback for their own suffixes while every builtin renderer keeps
+its own extensions. The builtin plain-text and code previews stay available as
 alternatives in the renderer dropdown, because this plugin never claims a
 builtin id.
 
