@@ -1,6 +1,6 @@
 {
   "name": "@zhouchunxiao/dsh-universal-preview",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Adds video, audio, LaTeX, and JSON/YAML structure renderers to the existing DSH document preview Sidebar.",
   "type": "module",
   "exports": {
@@ -9,13 +9,23 @@
     "./locale/*.json": "./locale/*.json",
     "./icon": "./icon.svg"
   },
-  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg"],
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
   "dsh": {
-    "bundle": { "patch": "./cordis.patch.yml" },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "platform": "web",
       "immediately": true,
-      "inject": ["@deepseek-ai/dsh-client-ui-sidebar-documentpreview"]
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-documentpreview"
+      ]
     }
   }
 }
